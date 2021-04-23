@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
             app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toBottomOf=""
+            app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
             tools:text="Название портфеля" />
 
         <androidx.recyclerview.widget.RecyclerView
@@ -67,28 +67,29 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginTop="148dp"
-            android:scrollbars="horizontal"
-            app:layout_constraintStart_toStartOf="layout_briefcase"
-            app:layout_constraintEnd_toEndOf="layout_briefcase"
+            tools:itemCount="1"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
+            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
             app:layout_constraintTop_toBottomOf="@+id/title_briefcase" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_target"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/layout_briefcase"
-        app:layout_constraintEnd_toEndOf="@+id/layout_council_of_the_Day"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/title_target"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf=""
-            app:layout_constraintStart_toStartOf=""
-            app:layout_constraintEnd_toEndOf=""
+            app:layout_constraintStart_toStartOf="@+id/layout_target"
+            app:layout_constraintTop_toTopOf="@+id/layout_target"
             tools:text="Название цели"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -96,7 +97,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:scrollbars="horizontal"
+            tools:itemCount="1"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/layout_target"
             app:layout_constraintEnd_toEndOf="@+id/layout_target"
             app:layout_constraintTop_toBottomOf="@+id/title_target"
@@ -106,18 +109,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_council_of_the_Day"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toBottomOf="@+id/layout_target"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/layout_target">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/title_council_of_the_Day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintTop_toBottomOf=""
-            app:layout_constraintStart_toStartOf=""
+            app:layout_constraintTop_toTopOf="@+id/layout_council_of_the_Day"
+            app:layout_constraintStart_toStartOf="@+id/layout_council_of_the_Day"
             tools:text="Название совета"/>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -125,6 +128,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            tools:itemCount="1"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/layout_council_of_the_Day"
             app:layout_constraintEnd_toEndOf="@+id/layout_council_of_the_Day"
             app:layout_constraintTop_toBottomOf="@+id/title_council_of_the_Day"/>
