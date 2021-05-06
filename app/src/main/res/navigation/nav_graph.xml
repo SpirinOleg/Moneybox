@@ -7,10 +7,41 @@
 
     <fragment
         android:id="@+id/main_dest"
-        android:name="com.example.moneybox.MainFragment"
+        android:name="com.example.moneybox.main.MainFragment"
         android:label="@string/main"
         tools:layout="@layout/main_fragment">
 
+        <action
+            android:id="@+id/action_main_dest_to_placeholder_top_up"
+            app:destination="@id/placeholder_top_up" />
+        <action
+            android:id="@+id/action_main_dest_to_placeholder_exclude"
+            app:destination="@id/placeholder_exclude" />
+        <action
+            android:id="@+id/action_main_dest_to_placeholder_target"
+            app:destination="@id/placeholder_target" />
+        <action
+            android:id="@+id/action_main_dest_to_placeholder_briefcase"
+            app:destination="@id/placeholder_briefcase" />
     </fragment>
+
+    <fragment
+        android:id="@+id/placeholder_top_up"
+        android:name="com.example.moneybox.feature.topUp.TopUp"
+        tools:layout="@layout/top_up"/>
+
+    <fragment android:id="@+id/placeholder_exclude"
+        android:name="com.example.moneybox.feature.exclude.Exclude"
+        tools:layout="@layout/exclude"/>
+
+    <fragment
+        android:id="@+id/placeholder_target"
+        android:name="com.example.moneybox.feature.target.Target"
+        tools:layout="@layout/target"/>
+
+    <fragment
+        android:id="@+id/placeholder_briefcase"
+        android:name="com.example.moneybox.feature.target.Target"
+        tools:layout="@layout/briefcase"/>
 
 </navigation>
