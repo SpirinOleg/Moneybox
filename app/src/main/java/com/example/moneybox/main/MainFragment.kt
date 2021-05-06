@@ -30,14 +30,14 @@ class MainFragment: Fragment(R.layout.main_fragment) {
 
     }
 
-        override fun onOptionsItemSelected(item: MenuItem): Boolean {
-            return when (item.itemId) {
-                R.id.action_settings -> {
-                    // navigate to settings screen
-                    true
-                }
-                else -> super.onOptionsItemSelected(item)
-            }
-        }
+//        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+//            return when (item.itemId) {
+//                R.id.action_settings -> {
+//                    // navigate to settings screen
+//                    true
+//                }
+//                else -> super.onOptionsItemSelected(item)
+//            }
+//        }
 
 }

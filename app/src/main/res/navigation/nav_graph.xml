@@ -23,6 +23,9 @@
         <action
             android:id="@+id/action_main_dest_to_placeholder_briefcase"
             app:destination="@id/placeholder_briefcase" />
+        <action
+            android:id="@+id/action_main_dest_to_placeholder5"
+            app:destination="@id/placeholder_settings" />
     </fragment>
 
     <fragment
@@ -43,5 +46,10 @@
         android:id="@+id/placeholder_briefcase"
         android:name="com.example.moneybox.feature.target.Target"
         tools:layout="@layout/briefcase"/>
+
+    <fragment
+        android:id="@+id/placeholder_settings"
+        android:name="com.example.moneybox.feature.settings.Settings"
+        tools:layout="@layout/settings"/>
 
 </navigation>
