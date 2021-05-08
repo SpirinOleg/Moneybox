@@ -56,6 +56,12 @@ dependencies {
     //Adapter simplify
     implementation("com.hannesdorfmann:adapterdelegates4:$adapterdelegates_version")
 
+    //cardview
+    implementation ("androidx.cardview:cardview:$cardview")
+
+    //
+    implementation("com.beloo.widget:ChipsLayoutManager:$chips_layout_manager")
+
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'

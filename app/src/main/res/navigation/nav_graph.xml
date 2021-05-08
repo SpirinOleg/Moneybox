@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/main_dest"
         android:name="com.example.moneybox.main.MainFragment"
-        android:label="@string/main"
+        android:label="@string/app_name"
         tools:layout="@layout/main_fragment">
 
         <action
@@ -24,7 +24,7 @@
             android:id="@+id/action_main_dest_to_placeholder_briefcase"
             app:destination="@id/placeholder_briefcase" />
         <action
-            android:id="@+id/action_main_dest_to_placeholder5"
+            android:id="@+id/action_main_dest_to_placeholder_settings"
             app:destination="@id/placeholder_settings" />
     </fragment>
 
@@ -40,16 +40,19 @@
     <fragment
         android:id="@+id/placeholder_target"
         android:name="com.example.moneybox.feature.target.Target"
-        tools:layout="@layout/target"/>
+        tools:layout="@layout/target"
+        android:label="Цель"/>
 
     <fragment
         android:id="@+id/placeholder_briefcase"
-        android:name="com.example.moneybox.feature.target.Target"
-        tools:layout="@layout/briefcase"/>
+        android:name="com.example.moneybox.feature.briefcase.Briefcase"
+        tools:layout="@layout/briefcase"
+        android:label="Портфель"/>
 
     <fragment
         android:id="@+id/placeholder_settings"
         android:name="com.example.moneybox.feature.settings.Settings"
-        tools:layout="@layout/settings"/>
+        tools:layout="@layout/settings"
+        android:label="Настройки"/>
 
 </navigation>
