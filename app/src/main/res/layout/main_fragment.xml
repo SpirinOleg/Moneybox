@@ -1,18 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.moneybox.main.MainFragment">
+
+    <View
+        android:id="@+id/canvas"
+        android:background="#E5E5E5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
+
 
     <TextView
         android:id="@+id/txt_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_margin="14px"
         android:text="Ваш баланс "
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +46,14 @@
 
     <Button
         android:id="@+id/btn_top_up"
+        style="@style/Widget.AppCompat.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:drawableLeft="@drawable/ic_union"
         android:text="Пополнить"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btn_exclude"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/balance" />
 
     <Button
@@ -46,6 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:text="Вывести"
+        android:drawableLeft="@drawable/ic_union_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_top_up"
         app:layout_constraintTop_toBottomOf="@+id/balance" />
@@ -71,39 +88,39 @@
             android:id="@+id/title_briefcase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="16dp"
             app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
             app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
             app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
-            tools:text="Название портфеля" />
+            android:text="Портфель" />
 
-        <androidx.cardview.widget.CardView
-            xmlns:card_view="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/card_briefcase"
-            android:clickable="true"
-            android:layout_gravity="center"
+        <TextView
+            android:id="@+id/briefcase_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="12dp"
+            android:textColor="#1CE6B4"
+            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
+            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
+            app:layout_constraintTop_toBottomOf="@+id/title_briefcase"
+            android:text="+ 2 076 ₽ (15,4%)"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/briefcase"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:layout_marginTop="148dp"
+            android:scrollbars="horizontal"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
             app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toBottomOf="@+id/title_briefcase"
-            card_view:cardCornerRadius="4dp"
-            android:focusable="true">
-        <include layout="@layout/item_briefcase_content"/>
-        </androidx.cardview.widget.CardView>
-
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/briefcase"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_margin="8dp"-->
-<!--            android:layout_marginTop="148dp"-->
-<!--            tools:itemCount="5"-->
-<!--            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--            tools:orientation="horizontal"-->
-<!--            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"-->
-<!--            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/title_briefcase" />-->
+            app:layout_constraintTop_toBottomOf="@+id/briefcase_count"
+            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_briefcase"
+            tools:orientation="horizontal"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -119,9 +136,10 @@
             android:id="@+id/title_target"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:layout_constraintStart_toStartOf="@+id/layout_target"
             app:layout_constraintTop_toTopOf="@+id/layout_target"
-            tools:text="Название цели"/>
+            android:text="Название цели"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/target"
@@ -150,16 +168,17 @@
             android:id="@+id/title_council_of_the_Day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             app:layout_constraintTop_toTopOf="@+id/layout_council_of_the_Day"
             app:layout_constraintStart_toStartOf="@+id/layout_council_of_the_Day"
-            tools:text="Название совета"/>
+            android:text="Название совета"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/council_of_the_Day"
+            android:id="@+id/recycler_council_of_the_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            tools:itemCount="5"
+            android:scrollbars="horizontal"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/layout_council_of_the_Day"
@@ -167,15 +186,6 @@
             app:layout_constraintTop_toBottomOf="@+id/title_council_of_the_Day"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <ImageButton
-        android:id="@+id/schedule"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/barrier"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier"
@@ -186,5 +196,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

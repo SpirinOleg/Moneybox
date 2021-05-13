@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id ("com.apollographql.apollo").version("2.5.6")
 }
 
 android {
@@ -59,10 +60,36 @@ dependencies {
     //cardview
     implementation ("androidx.cardview:cardview:$cardview")
 
-    //
+    //chips
     implementation("com.beloo.widget:ChipsLayoutManager:$chips_layout_manager")
+
+    //apollo
+    implementation("com.apollographql.apollo:apollo-runtime:2.5.6")
+    implementation("com.apollographql.apollo:apollo-coroutines-support:2.5.6")
+
+    //retrofit
+    implementation("com.squareup.okhttp3:logging-interceptor:$okhttp_version")
+    implementation("com.squareup.okhttp3:okhttp:$okhttp_version") {
+        // can use only this version, reason airwatch
+        force = true
+    }
+    implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-gson:$retrofit_version")
+    implementation("com.squareup.retrofit2:adapter-rxjava2:$retrofit_version")
+    implementation("com.squareup.retrofit2:converter-moshi:$retrofit_version")
+    implementation("com.squareup.moshi:moshi-kotlin:$moshi_version")
+
+    //Charts
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
+    //Hannesdorfmann
+    implementation 'com.hannesdorfmann:adapterdelegates4-kotlin-dsl-layoutcontainer:4.2.0'
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+}
+
+apollo {
+    generateKotlinModels.set(true)
 }

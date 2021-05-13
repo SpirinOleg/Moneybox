@@ -1,15 +1,21 @@
 package com.example.moneybox.main
 
 import android.os.Bundle
-import android.view.*
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment(R.layout.main_fragment) {
     private lateinit var navController: NavController
+    private var layoutManager: RecyclerView.LayoutManager? = null
+    private var adapter: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +33,11 @@ class MainFragment: Fragment(R.layout.main_fragment) {
 
         btn_top_up.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_top_up) }
         btn_exclude.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_exclude) }
+
+        briefcase.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = AdapterBriefcase()
+        }
 
     }
 
