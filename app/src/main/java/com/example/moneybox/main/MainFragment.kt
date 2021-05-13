@@ -16,6 +16,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
     private lateinit var navController: NavController
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>? = null
+    private var adapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,6 +40,10 @@ class MainFragment: Fragment(R.layout.main_fragment) {
             adapter = AdapterBriefcase()
         }
 
+        target.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = AdapterTarget()
+        }
     }
 
 }

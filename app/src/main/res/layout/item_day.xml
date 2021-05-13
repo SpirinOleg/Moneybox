@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_briefcase"
+    android:id="@+id/card_target"
     android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -11,5 +11,5 @@
     app:cardCornerRadius="8dp"
     app:cardElevation="4dp"
     android:focusable="true">
-    <include layout=""/>
+    <include layout="@layout/item_day_include"/>
 </androidx.cardview.widget.CardView>
