@@ -5,10 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/rectangle"
     tools:context="com.example.moneybox.main.MainFragment">
 
     <View
@@ -26,8 +28,9 @@
         android:id="@+id/txt_balance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="14px"
+        android:layout_marginTop="40dp"
         android:text="Ваш баланс"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,9 +40,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="44sp"
+        android:textStyle="bold"
         android:shadowRadius="5"
-        android:textColor="@color/black"
-        android:text="36549 Р"
+        android:textColor="#FFFFFF"
+        android:text="36549 ₽"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_balance" />
@@ -50,22 +54,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:background="@drawable/ic_frame_2744"
         android:drawableLeft="@drawable/ic_union"
         android:text="Пополнить"
+        android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_exclude"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/balance" />
+        app:layout_constraintTop_toBottomOf="@+id/balance"
+        app:layout_constraintBottom_toTopOf="@id/barrier_one"/>
 
     <Button
         android:id="@+id/btn_exclude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:background="@drawable/ic_frame_2744"
         android:text="Вывести"
+        android:textSize="14sp"
         android:drawableLeft="@drawable/ic_union_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_top_up"
-        app:layout_constraintTop_toBottomOf="@+id/balance" />
+        app:layout_constraintTop_toBottomOf="@+id/balance"
+        app:layout_constraintBottom_toTopOf="@id/barrier_one"/>
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier_one"
@@ -132,16 +142,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/title_target"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="16sp"
-            android:layout_margin="8dp"
-            app:layout_constraintStart_toStartOf="@+id/layout_target"
-            app:layout_constraintTop_toTopOf="@+id/layout_target"
-            android:text="Цель"/>
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/target"
             android:layout_width="match_parent"
@@ -152,8 +152,7 @@
             tools:listitem="@layout/item_day"
             app:layout_constraintStart_toStartOf="@+id/layout_target"
             app:layout_constraintEnd_toEndOf="@+id/layout_target"
-            app:layout_constraintTop_toBottomOf="@+id/title_target"
-            />
+            app:layout_constraintTop_toTopOf="@+id/layout_target" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -187,15 +186,6 @@
             app:layout_constraintTop_toBottomOf="@+id/title_council_of_the_Day"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="bottom"
-        app:constraint_referenced_ids="layout_council_of_the_Day,layout_target"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
