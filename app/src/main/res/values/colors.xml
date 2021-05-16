@@ -9,4 +9,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="chip">#3A83F1</color>
+    <color name="text_color">#031037</color>
 </resources>
