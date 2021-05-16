@@ -35,6 +35,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
 
         btn_top_up.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_top_up) }
         btn_exclude.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_exclude) }
+        card_briefcase.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_briefcase) }
 
         briefcase.apply {
             layoutManager = LinearLayoutManager(context)
@@ -45,6 +46,8 @@ class MainFragment: Fragment(R.layout.main_fragment) {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = AdapterTarget()
         }
+
+
     }
 
 

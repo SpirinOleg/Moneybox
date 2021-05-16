@@ -12,7 +12,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:textSize="16sp"
+        android:textColor="#031037"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
         app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
         android:text="Портфель" />
@@ -33,7 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        tools:text="Сбалансирован"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:text="Сбалансирован"
         app:layout_constraintStart_toStartOf="@+id/image_status_briefcase"
         app:layout_constraintEnd_toEndOf="@+id/image_status_briefcase"
         app:layout_constraintTop_toTopOf="@+id/image_status_briefcase" />
