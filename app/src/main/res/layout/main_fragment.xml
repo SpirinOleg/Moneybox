@@ -94,43 +94,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/title_briefcase"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_briefcase"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
-            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
-            android:text="Портфель" />
-
-        <TextView
-            android:id="@+id/briefcase_count"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:textSize="12dp"
-            android:textColor="#1CE6B4"
-            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
-            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toBottomOf="@+id/title_briefcase"
-            android:text="+ 2 076 ₽ (15,4%)"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/briefcase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginTop="148dp"
-            android:scrollbars="horizontal"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:layout_margin="4dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            android:focusable="true"
             app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
             app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toBottomOf="@+id/briefcase_count"
-            tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_briefcase"
-            tools:orientation="horizontal"/>
+            app:layout_constraintTop_toBottomOf="@+id/briefcase_count">
+            <include layout="@layout/item_briefcase_content"/>
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -146,9 +123,8 @@
             android:id="@+id/target"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_margin="4dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:orientation="horizontal"
             tools:listitem="@layout/item_day"
             app:layout_constraintStart_toStartOf="@+id/layout_target"
             app:layout_constraintEnd_toEndOf="@+id/layout_target"
@@ -178,7 +154,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:scrollbars="horizontal"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:orientation="horizontal"
             app:layout_constraintStart_toStartOf="@+id/layout_council_of_the_Day"

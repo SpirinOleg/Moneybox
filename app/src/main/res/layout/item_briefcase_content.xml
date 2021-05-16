@@ -3,61 +3,130 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:id="@+id/layout_briefcase"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <TextView
-        android:id="@+id/text"
+        android:id="@+id/title_briefcase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
+        android:text="Портфель" />
+
+    <View
+        android:id="@+id/image_status_briefcase"
+        android:layout_width="108dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        android:layout_alignParentRight="true"
+        app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
+        android:background="@drawable/ic_rectangle_952"
+        />
+
+    <TextView
+        android:id="@+id/text_status_briefcase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        tools:text="Сбалансирован"
+        app:layout_constraintStart_toStartOf="@+id/image_status_briefcase"
+        app:layout_constraintEnd_toEndOf="@+id/image_status_briefcase"
+        app:layout_constraintTop_toTopOf="@+id/image_status_briefcase" />
+
+    <TextView
+        android:id="@+id/briefcase_count"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="8dp"
+        android:textSize="12dp"
+        android:textColor="#1CE6B4"
+        app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
+        app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toBottomOf="@+id/title_briefcase"
+        android:text="+ 2 076 ₽ (15,4%)"/>
 
     <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chips_group"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text"
+        app:layout_constraintTop_toBottomOf="@+id/briefcase_count"
         android:layout_margin="4dp">
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="1д" />
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="1н" />
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="1м" />
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="6м" />
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="1г" />
 
         <com.google.android.material.chip.Chip
-            style="@style/Widget.MaterialComponents.Chip.Filter"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimary"
             android:text="Все" />
 
     </com.google.android.material.chip.ChipGroup>
+
+    <View
+        android:id="@+id/line_graph"
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_line_1"
+        app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
+        app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toBottomOf="@+id/chips_group"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/briefcase"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:scrollbars="vertical"
+        tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/line_graph"
+        tools:listitem="@layout/item_shares" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

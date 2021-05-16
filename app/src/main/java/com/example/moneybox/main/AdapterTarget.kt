@@ -45,15 +45,9 @@ class AdapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>()  {
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
-        var nameTarget: TextView
-        var dateList: TextView
-        var percentTarget: ProgressBar
-
-        init {
-            nameTarget = itemView.findViewById(R.id.name_target)
-            dateList = itemView.findViewById(R.id.date_target)
-            percentTarget = itemView.findViewById(R.id.progressBar)
-        }
+        var nameTarget: TextView = itemView.findViewById(R.id.name_target)
+        var dateList: TextView = itemView.findViewById(R.id.date_target)
+        var percentTarget: ProgressBar = itemView.findViewById(R.id.progressBar)
 
     }
 }

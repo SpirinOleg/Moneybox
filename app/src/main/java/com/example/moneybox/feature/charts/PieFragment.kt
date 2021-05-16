@@ -7,7 +7,6 @@ import com.anychart.AnyChart
 import com.anychart.chart.common.dataentry.DataEntry
 import com.anychart.chart.common.dataentry.ValueDataEntry
 import com.example.moneybox.R
-import kotlinx.android.synthetic.main.item_briefcase.*
 import kotlinx.android.synthetic.main.pie_chart.*
 
 class PieFragment: Fragment(R.layout.pie_chart) {

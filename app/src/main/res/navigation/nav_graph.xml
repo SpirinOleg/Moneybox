@@ -31,10 +31,12 @@
     <fragment
         android:id="@+id/placeholder_top_up"
         android:name="com.example.moneybox.feature.topUp.TopUp"
+        android:label="Пополнить"
         tools:layout="@layout/top_up"/>
 
     <fragment android:id="@+id/placeholder_exclude"
         android:name="com.example.moneybox.feature.exclude.Exclude"
+        android:label="Вывести"
         tools:layout="@layout/exclude"/>
 
     <fragment

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
+import kotlinx.android.synthetic.main.item_briefcase_content.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment(R.layout.main_fragment) {
@@ -36,7 +37,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
         btn_exclude.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_exclude) }
 
         briefcase.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            layoutManager = LinearLayoutManager(context)
             adapter = AdapterBriefcase()
         }
 
@@ -45,5 +46,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
             adapter = AdapterTarget()
         }
     }
+
+
 
 }

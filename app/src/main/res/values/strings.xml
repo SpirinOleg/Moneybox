@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Moneybox</string>
     <string name="tools">Настройки</string>
+    <string name="percent_shares">%</string>
 </resources>
