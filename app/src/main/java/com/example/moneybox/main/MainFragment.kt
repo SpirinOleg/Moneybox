@@ -10,8 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
+import com.example.moneybox.feature.charts.PieData
 import com.example.moneybox.model.Council
 import kotlinx.android.synthetic.main.item_briefcase_content.*
+import kotlinx.android.synthetic.main.item_briefcase_content.any_chart_vie
 import kotlinx.android.synthetic.main.item_council.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
@@ -21,6 +23,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
     private var adapter: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>? = null
     private var adapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>? = null
     private var council: Council = Council("")
+    val data = PieData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +38,12 @@ class MainFragment: Fragment(R.layout.main_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        data.add("Sid", 18.0, "#4286f4")
+        data.add("Nick", 4.0, "#44a837")
+        data.add("Dik", 6.0, "#FF018786")
+        data.add("Dave", 10.0, "#3A83F1")
+
+        any_chart_vie.setData(data)
 
         council.textContext = getString(R.string.context_council)
         text_council_ontext.text = council.textContext

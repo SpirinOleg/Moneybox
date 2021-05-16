@@ -125,6 +125,26 @@
         app:layout_constraintTop_toBottomOf="@+id/chips_group"
         />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_piechart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/line_graph"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <com.example.moneybox.feature.charts.PieChart
+            android:id="@+id/any_chart_vie"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="@+id/layout_piechart"
+            app:layout_constraintStart_toStartOf="@+id/layout_piechart"
+            app:layout_constraintTop_toTopOf="@+id/layout_piechart"
+            app:layout_constraintBottom_toBottomOf="@+id/layout_piechart"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/briefcase"
         android:layout_width="match_parent"
@@ -134,7 +154,7 @@
         tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/line_graph"
+        app:layout_constraintTop_toBottomOf="@+id/layout_piechart"
         tools:listitem="@layout/item_shares" />
 
 
