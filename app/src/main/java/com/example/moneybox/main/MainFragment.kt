@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
+import com.example.moneybox.model.Council
 import kotlinx.android.synthetic.main.item_briefcase_content.*
+import kotlinx.android.synthetic.main.item_council.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment(R.layout.main_fragment) {
@@ -18,6 +20,7 @@ class MainFragment: Fragment(R.layout.main_fragment) {
     private var layoutManager: RecyclerView.LayoutManager? = null
     private var adapter: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>? = null
     private var adapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>? = null
+    private var council: Council = Council("")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,9 @@ class MainFragment: Fragment(R.layout.main_fragment) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        council.textContext = getString(R.string.context_council)
+        text_council_ontext.text = council.textContext
+
         btn_top_up.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_top_up) }
         btn_exclude.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_exclude) }
         card_briefcase.setOnClickListener { navController.navigate(R.id.action_main_dest_to_placeholder_briefcase) }
@@ -46,6 +52,8 @@ class MainFragment: Fragment(R.layout.main_fragment) {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = AdapterTarget()
         }
+
+
 
 
     }
