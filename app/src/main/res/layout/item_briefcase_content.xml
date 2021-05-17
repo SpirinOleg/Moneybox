@@ -16,14 +16,14 @@
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
         app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
-        android:text="Портфель" />
+        android:text="@string/briefcase" />
 
     <View
         android:id="@+id/image_status_briefcase"
         android:layout_width="108dp"
         android:layout_height="24dp"
         android:layout_margin="8dp"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
         app:layout_constraintTop_toTopOf="@+id/layout_briefcase"
         android:background="@drawable/ic_rectangle_952"
@@ -36,7 +36,7 @@
         android:layout_margin="2dp"
         android:textSize="12sp"
         android:textColor="#FFFFFF"
-        android:text="Сбалансирован"
+        android:text="@string/balanced"
         app:layout_constraintStart_toStartOf="@+id/image_status_briefcase"
         app:layout_constraintEnd_toEndOf="@+id/image_status_briefcase"
         app:layout_constraintTop_toTopOf="@+id/image_status_briefcase" />
@@ -46,12 +46,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textColor="#1CE6B4"
         app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
         app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
         app:layout_constraintTop_toBottomOf="@+id/title_briefcase"
-        android:text="+ 2 076 ₽ (15,4%)"/>
+        android:text="@string/briefcase_percent_sum"/>
 
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chips_group"
@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="1д" />
+            android:text="@string/one_day" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="1н" />
+            android:text="@string/one_week" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="1м" />
+            android:text="@string/one_month" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="6м" />
+            android:text="@string/six_mouths" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -100,7 +100,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="1г" />
+            android:text="@string/one_year" />
 
         <com.google.android.material.chip.Chip
             style="@style/Widget.MaterialComponents.Chip.Choice"
@@ -108,7 +108,7 @@
             android:layout_height="wrap_content"
             app:rippleColor="@color/colorPrimary"
             android:textColor="@color/text_color"
-            android:text="Все" />
+            android:text="@string/all" />
 
     </com.google.android.material.chip.ChipGroup>
 
@@ -116,7 +116,7 @@
         android:id="@+id/line_graph"
         android:layout_width="match_parent"
         android:layout_height="135dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_margin="8dp"
         android:layout_alignParentTop="true"
         android:background="@drawable/ic_line_1"

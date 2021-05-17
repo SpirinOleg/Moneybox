@@ -6,4 +6,24 @@
     <string name="context_council">Они — враг любого инвестора. Умение не поддаваться импульсивным решениям — это как минимум 70% успеха.
 Старайтесь не смотреть на цену акций ежеминутно. Если ваша инвестиционная идея пошла не по плану и акции упали в цене, сначала спокойно взвесьте все за и против.
 Может, это еще не повод бросать все и бежать продавать бумаги с убытком. Цена потом может вернуться и продолжить расти, но уже без вас. Если вы долгосрочный инвестор, надо уметь выдерживать падение цен ваших бумаг на протяжении длительного времени.</string>
+    <string name="target">Цель</string>
+    <string name="relaxation">На отдых</string>
+    <string name="test_date">до 07.08.21</string>
+    <string name="test_sum">95 000 ₽</string>
+    <string name="test_money">из 150 000 ₽</string>
+    <string name="balanced">Сбалансирован</string>
+    <string name="briefcase_percent_sum">+ 2 076 ₽ (15,4%)</string>
+    <string name="one_day">1д</string>
+    <string name="one_week">1н</string>
+    <string name="one_month">1м</string>
+    <string name="six_mouths">6м</string>
+    <string name="one_year">1г</string>
+    <string name="all">Все</string>
+    <string name="your_balance">Ваш баланс</string>
+    <string name="many_balance">36549 ₽</string>
+    <string name="text_top_up">Пополнить</string>
+    <string name="text_exclude">Вывести</string>
+    <string name="briefcase">Портфель</string>
+    <string name="edit_target">изменение цели</string>
+    <string name="image_palm">картинка пальмы</string>
 </resources>

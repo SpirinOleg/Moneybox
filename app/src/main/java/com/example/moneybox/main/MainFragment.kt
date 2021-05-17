@@ -19,9 +19,6 @@ import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment(R.layout.main_fragment) {
     private lateinit var navController: NavController
-    private var layoutManager: RecyclerView.LayoutManager? = null
-    private var adapter: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>? = null
-    private var adapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>? = null
     private var council: Council = Council("")
     val data = PieData()
 

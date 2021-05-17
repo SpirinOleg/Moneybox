@@ -9,7 +9,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/rectangle"
     tools:context="com.example.moneybox.main.MainFragment">
 
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="Ваш баланс"
+        android:text="@string/your_balance"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:textStyle="bold"
         android:shadowRadius="5"
         android:textColor="#FFFFFF"
-        android:text="36549 ₽"
+        android:text="@string/many_balance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_balance" />
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:drawableLeft="@drawable/ic_union"
-        android:text="Пополнить"
+        android:text="@string/text_top_up"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/btn_exclude"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,7 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:drawableLeft="@drawable/ic_union_up"
-        android:text="Вывести"
+        android:text="@string/text_exclude"
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_top_up"
@@ -84,7 +84,7 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/layout_briefcase"
+        android:id="@+id/layout_main_briefcase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/barrier_one"
@@ -100,9 +100,9 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:focusable="true"
-            app:layout_constraintStart_toStartOf="@+id/layout_briefcase"
-            app:layout_constraintEnd_toEndOf="@+id/layout_briefcase"
-            app:layout_constraintTop_toTopOf="@+id/layout_briefcase">
+            app:layout_constraintStart_toStartOf="@+id/layout_main_briefcase"
+            app:layout_constraintEnd_toEndOf="@+id/layout_main_briefcase"
+            app:layout_constraintTop_toTopOf="@+id/layout_main_briefcase">
             <include layout="@layout/item_briefcase_content"/>
         </androidx.cardview.widget.CardView>
 
@@ -112,7 +112,7 @@
         android:id="@+id/layout_target"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/layout_briefcase"
+        app:layout_constraintTop_toBottomOf="@+id/layout_main_briefcase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
