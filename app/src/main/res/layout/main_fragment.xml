@@ -87,6 +87,7 @@
         android:id="@+id/layout_main_briefcase"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/color_grey"
         app:layout_constraintTop_toBottomOf="@+id/barrier_one"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -96,14 +97,14 @@
             android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:focusable="true"
             app:layout_constraintStart_toStartOf="@+id/layout_main_briefcase"
             app:layout_constraintEnd_toEndOf="@+id/layout_main_briefcase"
             app:layout_constraintTop_toTopOf="@+id/layout_main_briefcase">
-            <include layout="@layout/item_briefcase_content"/>
+
+            <include layout="@layout/item_briefcase_content" />
         </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -112,6 +113,7 @@
         android:id="@+id/layout_target"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/color_grey"
         app:layout_constraintTop_toBottomOf="@+id/layout_main_briefcase"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -120,7 +122,6 @@
             android:id="@+id/target"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_day"
             app:layout_constraintStart_toStartOf="@+id/layout_target"
@@ -133,6 +134,7 @@
         android:id="@+id/layout_council_of_the_Day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/color_grey"
         app:layout_constraintTop_toBottomOf="@+id/layout_target"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -141,7 +143,6 @@
             android:id="@+id/card_council"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="4dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             android:focusable="true"
