@@ -61,12 +61,5 @@ class MainFragment: Fragment(R.layout.main_fragment) {
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = AdapterTarget()
         }
-
-
-
-
     }
-
-
-
 }
