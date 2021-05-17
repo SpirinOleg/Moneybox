@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.util.AttributeSet
+import android.view.MotionEvent
 import android.view.View
 import com.example.moneybox.model.PieSlice
 
@@ -14,6 +15,10 @@ class PieChart @JvmOverloads constructor(
 ) : View(context, attrs, defStyleAttr) {
     // Data
     private var data: PieData? = null
+
+    // State
+    private var pieState = PieState.MINIMIZED
+    private var initialHeight: Int? = null
 
     // Graphics
     private val borderPaint = Paint()
@@ -202,7 +207,63 @@ class PieChart @JvmOverloads constructor(
         val xOffset = if (alignment == IndicatorAlignment.LEFT) width / 4 * -1 else width / 4
         if (alignment == IndicatorAlignment.LEFT) mainTextPaint.textAlign = Paint.Align.LEFT
         else mainTextPaint.textAlign = Paint.Align.RIGHT
-        canvas?.drawText(pieItem.name, pieItem.indicatorCircleLocation.x + xOffset,
+        canvas?.drawText(pieItem.name+" "+pieItem.value.toString()+"%", pieItem.indicatorCircleLocation.x + xOffset,
                 pieItem.indicatorCircleLocation.y - 10, mainTextPaint)
+    }
+
+    /**
+     * Handles touch interaction for the view
+     *
+     * @param event the recorded motion event
+     */
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        if (event?.action == MotionEvent.ACTION_DOWN) return true
+        if (event?.action == MotionEvent.ACTION_UP) {
+            when (pieState) {
+                // if pie chart is minimized, expand the chart
+                PieState.MINIMIZED -> expandPieChart()
+                // if pie chart is expanded, minimize the chart
+                PieState.EXPANDED -> collapsePieChart()
+                else -> {
+                } //do nothing
+            }
+        }
+        return super.onTouchEvent(event)
+    }
+
+    /**
+     * Expands the view to a ratio of the width of the screen
+     */
+    private fun expandPieChart() {
+        layoutParams.height = (width / 2.5).toInt()
+        mainTextPaint.alpha = 255
+        indicatorCirclePaint.alpha = 255
+        linePaint.alpha = 255
+        pieState = PieState.EXPANDED
+        requestLayout()
+        invalidate()
+    }
+
+    /**
+     * Collapses the view to the original size of the view
+     */
+    private fun collapsePieChart() {
+        initialHeight?.let {
+            layoutParams.height = it
+            mainTextPaint.alpha = 0
+            indicatorCirclePaint.alpha = 0
+            linePaint.alpha = 0
+            pieState = PieState.MINIMIZED
+            requestLayout()
+            invalidate()
+        }
+    }
+
+    /**
+     * Save initial height for collapsing the view
+     */
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec)
+        if (initialHeight == null) initialHeight = layoutParams.height
     }
 }

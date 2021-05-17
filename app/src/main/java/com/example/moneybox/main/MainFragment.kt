@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
 import com.example.moneybox.feature.charts.PieData
+import com.example.moneybox.model.Briefcase
 import com.example.moneybox.model.Council
 import kotlinx.android.synthetic.main.item_briefcase_content.*
 import kotlinx.android.synthetic.main.item_briefcase_content.any_chart_vie
@@ -35,10 +36,10 @@ class MainFragment: Fragment(R.layout.main_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        data.add("Sid", 18.0, "#4286f4")
-        data.add("Nick", 4.0, "#44a837")
-        data.add("Dik", 6.0, "#FF018786")
-        data.add("Dave", 10.0, "#3A83F1")
+        data.add("Акции", 30.0, "#F70512")
+        data.add("Облигации", 40.0, "#3A83F1")
+        data.add("Валюта", 20.0, "#8BD5FF")
+        data.add("Золото", 10.0, "#F99F36")
 
         any_chart_vie.setData(data)
 
