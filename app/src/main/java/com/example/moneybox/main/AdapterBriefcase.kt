@@ -41,9 +41,9 @@ class AdapterBriefcase: RecyclerView.Adapter<AdapterBriefcase.ViewHolder>() {
         private val percent = itemView.context.getString(R.string.percent_shares)
 
         fun bind(item: Briefcase) = with(itemView){
-            itemView.text.text = item.category
-            itemView.shares_bar.progress = item.percent
-            itemView.text_percent_shares.text = MessageFormat.format(messagePattern, item.textPercent, percent)
+            text.text = item.category
+            shares_bar.progress = item.percent
+            text_percent_shares.text = MessageFormat.format(messagePattern, item.textPercent, percent)
         }
     }
 }

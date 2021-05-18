@@ -26,4 +26,5 @@
     <string name="briefcase">Портфель</string>
     <string name="edit_target">изменение цели</string>
     <string name="image_palm">картинка пальмы</string>
+    <string name="text_recommendation">Рекомендации</string>
 </resources>
