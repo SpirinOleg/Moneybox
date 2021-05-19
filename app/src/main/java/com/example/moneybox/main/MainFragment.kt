@@ -8,10 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
 import com.example.moneybox.feature.charts.PieData
-import com.example.moneybox.model.Briefcase
 import com.example.moneybox.model.Council
 import kotlinx.android.synthetic.main.item_briefcase_content.*
 import kotlinx.android.synthetic.main.item_briefcase_content.any_chart_vie

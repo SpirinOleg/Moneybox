@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Moneybox</string>
     <string name="tools">Настройки</string>
+    <string name="refresh">Обновление</string>
     <string name="percent_shares">%</string>
     <string name="all_advice">Все советы</string>
     <string name="context_council">Они — враг любого инвестора. Умение не поддаваться импульсивным решениям — это как минимум 70% успеха.
@@ -27,4 +28,6 @@
     <string name="edit_target">изменение цели</string>
     <string name="image_palm">картинка пальмы</string>
     <string name="text_recommendation">Рекомендации</string>
+    <string name="channel_name">Инвест копилка</string>
+    <string name="channel_description">Инвестиции</string>
 </resources>

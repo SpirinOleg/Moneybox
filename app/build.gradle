@@ -35,6 +35,7 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     def nav_version = "2.3.5"
     def koin_version = "2.2.2"
     def adapterdelegates_version = "4.3.0"
