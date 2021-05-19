@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/text_descr_hrd_percent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/txt_descr_hrd_percent"
+            android:textAlignment="center"
+            android:textColor="#99A0AB"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!---->
+        <ImageView
+            android:id="@+id/image_hrd_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_frame_3879"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_descr_hrd_percent" />
+
+        <TextView
+            android:id="@+id/text_deposit_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Размер вклада"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_descr_hrd_percent" />
+
+        <EditText
+            android:id="@+id/edt_deposit_size"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_deposit_size" />
+        <!---->
+        <TextView
+            android:id="@+id/text_deposit_term"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Срок вклада, дни"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_deposit_size" />
+
+        <EditText
+            android:id="@+id/edt_deposit_term"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_deposit_term" />
+
+        <!---->
+
+        <TextView
+            android:id="@+id/text_every_month"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ежемес. прибавка"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_deposit_term"
+            app:layout_constraintStart_toStartOf="@+id/image_hrd_percent"
+            app:layout_constraintTop_toTopOf="@+id/text_deposit_term" />
+
+        <EditText
+            android:id="@+id/edt_every_month"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_every_month"
+            app:layout_constraintTop_toBottomOf="@+id/text_every_month" />
+
+
+        <TextView
+            android:id="@+id/text_interest_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginStart="184dp"
+            android:layout_marginTop="8dp"
+            android:text="Процентная ставка"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_deposit_term" />
+
+        <EditText
+            android:id="@+id/edt_interest_rate"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_interest_rate" />
+        <!---->
+
+        <TextView
+            android:id="@+id/text_tax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Налог"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/text_interest_rate"
+            app:layout_constraintStart_toStartOf="@+id/text_every_month"
+            app:layout_constraintTop_toBottomOf="@+id/edt_every_month" />
+
+        <EditText
+            android:id="@+id/edt_tax"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/text_tax"
+            app:layout_constraintTop_toBottomOf="@+id/text_tax" />
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Рассчитывать налоги"
+            android:textColor="#222222"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_interest_rate" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hard_tax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Рассчитать"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkbox" />
+        <!---->
+        <!---->
+        <!---->
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Результат"
+            android:textColor="#222222"
+            android:textSize="22sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_hard_tax" />
+
+        <ImageView
+            android:id="@+id/image_hrd_tax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/ic_tabs"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_result" />
+
+        <ImageView
+            android:id="@+id/image_hrd_diag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@drawable/ic_frame_3883"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_hrd_tax" />
+
+        <!---->
+
+        <TextView
+            android:id="@+id/res_you_invest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Вы вложите"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_hrd_diag" />
+
+        <EditText
+            android:id="@+id/edt_res_you_invest"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="3 540 000 ₽"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/res_you_invest" />
+        <!---->
+
+        <TextView
+            android:id="@+id/res_you_earn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Вы заработаете"
+            android:layout_marginEnd="8dp"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/res_you_invest"
+            app:layout_constraintStart_toStartOf="@+id/edit_res_you_earn"
+            app:layout_constraintTop_toTopOf="@+id/res_you_invest" />
+
+        <!---->
+
+        <EditText
+            android:id="@+id/edit_res_you_earn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="9 700 000 ₽"
+            android:layout_marginEnd="8dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/res_you_pay_tax"
+            app:layout_constraintTop_toBottomOf="@+id/res_you_earn" />
+
+        <EditText
+            android:id="@+id/edt_res_you_pay_tax"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="600 000 ₽"
+            android:visibility="gone"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/res_you_pay_tax" />
+
+        <TextView
+            android:id="@+id/res_final_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Итоговая сумма"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edt_res_you_invest" />
+
+        <EditText
+            android:id="@+id/edt_res_final_sum"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="12 640 000 ₽"
+            android:visibility="gone"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/res_final_sum" />
+
+        <TextView
+            android:id="@+id/res_you_pay_tax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Налог"
+            android:layout_marginEnd="8dp"
+            android:textColor="#99A0AB"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/edt_res_you_pay_tax"
+            app:layout_constraintTop_toTopOf="@+id/res_final_sum" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

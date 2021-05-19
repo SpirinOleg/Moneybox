@@ -31,4 +31,6 @@
     <string name="text_recommendation">Рекомендации</string>
     <string name="channel_name">Инвест копилка</string>
     <string name="channel_description">Инвестиции</string>
+    <string name="hard_percent">Сложный процент</string>
+    <string name="txt_descr_hrd_percent">Выгоду сложного процента посчитать непросто. Калькулятор сделает это за вас за 10 секунд</string>
 </resources>

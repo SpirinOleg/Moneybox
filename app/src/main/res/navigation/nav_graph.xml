@@ -43,18 +43,28 @@
         android:id="@+id/placeholder_target"
         android:name="com.example.moneybox.feature.target.Target"
         tools:layout="@layout/target"
-        android:label="Цель"/>
+        android:label="@string/target"/>
 
     <fragment
         android:id="@+id/placeholder_briefcase"
         android:name="com.example.moneybox.feature.briefcase.Briefcase"
         tools:layout="@layout/briefcase"
-        android:label="Портфель"/>
+        android:label="Портфель">
+        <action
+            android:id="@+id/action_placeholder_briefcase_to_placeholder_hard_percent"
+            app:destination="@id/placeholder_hard_percent" />
+    </fragment>
 
     <fragment
         android:id="@+id/placeholder_settings"
         android:name="com.example.moneybox.feature.settings.Settings"
         tools:layout="@layout/settings"
         android:label="Настройки"/>
+
+    <fragment
+        android:id="@+id/placeholder_hard_percent"
+        android:name="com.example.moneybox.feature.hardpercent.HardPercent"
+        tools:layout="@layout/item_hard_percent"
+        android:label="@string/hard_percent"/>
 
 </navigation>

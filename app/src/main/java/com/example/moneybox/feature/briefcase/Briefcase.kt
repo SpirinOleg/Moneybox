@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moneybox.R
+import kotlinx.android.synthetic.main.item_hard_percent.*
 import kotlinx.android.synthetic.main.item_moneybox.*
 import kotlinx.android.synthetic.main.layout_risk_briefcase.*
 
@@ -23,6 +24,8 @@ class Briefcase: Fragment(R.layout.briefcase) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        btn_hard_percent.setOnClickListener { navController.navigate(R.id.action_placeholder_briefcase_to_placeholder_hard_percent) }
 
         val numberOfColumns =2
 
