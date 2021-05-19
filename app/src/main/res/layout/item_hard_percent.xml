@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/text_hard_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Сложный процент"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="20sp"
+        android:color="@color/text_color"/>
+
+    <TextView
+        android:id="@+id/text_hard_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Как эффективно копить, используя силу сложного процента?"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_hard_title"
+        android:color="#2B1136"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_hard_percent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/need_calc"
+        android:layout_margin="8dp"
+        android:textSize="16sp"
+        android:backgroundTint="#ffffff"
+        android:textColor="#3A83F1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_hard_description"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
