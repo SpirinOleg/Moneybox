@@ -21,13 +21,15 @@
         android:id="@+id/btn_target"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:clickable="true"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@color/white"
         android:src="@drawable/ic_edit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/edit_target" />
+        android:contentDescription="@string/edit_target"
+        android:focusable="true" />
 
     <ImageView
         android:id="@+id/image_target"

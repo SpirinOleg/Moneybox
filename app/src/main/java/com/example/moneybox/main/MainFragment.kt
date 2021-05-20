@@ -6,6 +6,7 @@ import android.view.MenuInflater
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.moneybox.R
@@ -14,6 +15,7 @@ import com.example.moneybox.model.Council
 import kotlinx.android.synthetic.main.item_briefcase_content.*
 import kotlinx.android.synthetic.main.item_briefcase_content.any_chart_vie
 import kotlinx.android.synthetic.main.item_council.*
+import kotlinx.android.synthetic.main.item_day_include.*
 import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment: Fragment(R.layout.main_fragment) {

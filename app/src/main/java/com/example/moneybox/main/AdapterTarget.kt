@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
 
@@ -37,6 +38,10 @@ class AdapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>()  {
         holder.nameTarget.text = targetList[position]
         holder.dateList.text = dateList[position]
         holder.percentTarget.progress = percentTarget[position]
+        holder.itemView.setOnClickListener{
+            it.findNavController().navigate(R.id.action_main_dest_to_placeholder_target)
+        }
+
     }
 
     override fun getItemCount(): Int {

@@ -66,6 +66,7 @@
             android:id="@+id/edt_deposit_term"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:inputType="number"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_deposit_term" />
@@ -88,6 +89,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            android:inputType="number"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/text_every_month"
             app:layout_constraintTop_toBottomOf="@+id/text_every_month" />
@@ -111,6 +113,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_interest_rate" />
         <!---->
@@ -213,6 +216,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:inputType="number"
             android:text="3 540 000 ₽"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
@@ -239,6 +243,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="9 700 000 ₽"
+            android:inputType="number"
             android:layout_marginEnd="8dp"
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="@+id/res_you_pay_tax"
@@ -249,6 +254,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="600 000 ₽"
+            android:inputType="number"
             android:visibility="gone"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -271,6 +277,7 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:inputType="number"
             android:text="12 640 000 ₽"
             android:visibility="gone"
             app:layout_constraintHorizontal_bias="0.0"

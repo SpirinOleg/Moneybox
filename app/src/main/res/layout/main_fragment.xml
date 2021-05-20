@@ -120,6 +120,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/target"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -141,6 +142,7 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_council"
+            android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:cardCornerRadius="8dp"

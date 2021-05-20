@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moneybox.R
 import com.example.moneybox.model.Recomendation
-import kotlinx.android.synthetic.main.item_moneybox_shares.view.*
 import kotlinx.android.synthetic.main.item_shares_briefcase.view.*
 import java.text.MessageFormat
 
