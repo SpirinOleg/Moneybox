@@ -41,7 +41,6 @@ class AdapterTarget: RecyclerView.Adapter<AdapterTarget.ViewHolder>()  {
         holder.dateList.text = dateList[position]
         holder.percentTarget.progress = percentTarget[position]
         holder.bind()
-
     }
 
     override fun getItemCount(): Int {

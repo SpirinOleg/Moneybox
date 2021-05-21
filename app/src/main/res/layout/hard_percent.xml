@@ -47,6 +47,9 @@
             android:id="@+id/edt_deposit_size"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="3 540 000"
+            android:inputType="number"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_deposit_size" />
@@ -67,6 +70,8 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:inputType="number"
+            android:textSize="16sp"
+            android:text="365"
             android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_deposit_term" />
@@ -88,6 +93,8 @@
             android:id="@+id/edt_every_month"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="100 000"
             app:layout_constraintEnd_toEndOf="parent"
             android:inputType="number"
             app:layout_constraintHorizontal_bias="0.0"
@@ -113,6 +120,8 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
+            android:textSize="16sp"
+            android:text="51"
             android:inputType="number"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_interest_rate" />
@@ -135,6 +144,8 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            android:textSize="16sp"
+            android:text="13"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/text_tax"
             app:layout_constraintTop_toBottomOf="@+id/text_tax" />
