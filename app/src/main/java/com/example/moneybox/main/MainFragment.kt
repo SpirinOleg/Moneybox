@@ -21,7 +21,7 @@ import kotlinx.android.synthetic.main.main_fragment.*
 class MainFragment: Fragment(R.layout.main_fragment) {
     private lateinit var navController: NavController
     private var council: Council = Council("")
-    val data = PieData()
+    private val data = PieData()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

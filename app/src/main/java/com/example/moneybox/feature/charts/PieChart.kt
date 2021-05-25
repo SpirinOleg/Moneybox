@@ -1,5 +1,9 @@
 package com.example.moneybox.feature.charts
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.AnimatorSet
+import android.animation.ValueAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.graphics.Color
@@ -8,6 +12,8 @@ import android.graphics.RectF
 import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import com.example.moneybox.model.PieSlice
 
 class PieChart @JvmOverloads constructor(
@@ -27,6 +33,14 @@ class PieChart @JvmOverloads constructor(
     private var indicatorCircleRadius = 0f
     private val mainTextPaint = Paint()
     private val oval = RectF()
+
+
+    // Animations
+    private val expandAnimator = ValueAnimator.ofInt()
+    private val collapseAnimator = ValueAnimator.ofInt()
+    private val textAlpha = ValueAnimator.ofInt()
+    private val animateExpansion = AnimatorSet()
+    private val animateCollapse = AnimatorSet()
 
     init {
         borderPaint.apply {
@@ -235,13 +249,10 @@ class PieChart @JvmOverloads constructor(
      * Expands the view to a ratio of the width of the screen
      */
     private fun expandPieChart() {
-        layoutParams.height = (width / 2.5).toInt()
-        mainTextPaint.alpha = 255
-        indicatorCirclePaint.alpha = 255
-        linePaint.alpha = 255
-        pieState = PieState.EXPANDED
-        requestLayout()
-        invalidate()
+        expandAnimator.setIntValues(layoutParams.height, (width / 2.5).toInt())
+        textAlpha.setIntValues(0, 255)
+        animateExpansion.start()
+        setupAnimations()
     }
 
     /**
@@ -249,13 +260,10 @@ class PieChart @JvmOverloads constructor(
      */
     private fun collapsePieChart() {
         initialHeight?.let {
-            layoutParams.height = it
-            mainTextPaint.alpha = 0
-            indicatorCirclePaint.alpha = 0
-            linePaint.alpha = 0
-            pieState = PieState.MINIMIZED
-            requestLayout()
-            invalidate()
+            collapseAnimator.setIntValues(layoutParams.height, it)
+            textAlpha.setIntValues(255, 0)
+            animateCollapse.start()
+            setupAnimations()
         }
     }
 
@@ -266,4 +274,57 @@ class PieChart @JvmOverloads constructor(
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
         if (initialHeight == null) initialHeight = layoutParams.height
     }
+
+    /**
+     * Initialize animations properties for all used animations
+     */
+    private fun setupAnimations() {
+        // Expands pie chart from minimized state
+        expandAnimator.duration = 200
+        expandAnimator.interpolator = OvershootInterpolator()
+        expandAnimator.addUpdateListener {
+            layoutParams.height = it.animatedValue as Int
+            requestLayout()
+            setCircleBounds()
+            setPieSliceDimensions()
+            invalidate()
+        }
+        expandAnimator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                super.onAnimationEnd(animation)
+                pieState = PieState.EXPANDED
+            }
+        })
+
+        // Collapses pie chart from expanded state
+        collapseAnimator.duration = 200
+        collapseAnimator.interpolator = DecelerateInterpolator()
+        collapseAnimator.addUpdateListener {
+            layoutParams.height = it.animatedValue as Int
+            requestLayout()
+            setCircleBounds()
+            setPieSliceDimensions()
+            invalidate()
+        }
+        collapseAnimator.addListener(object : AnimatorListenerAdapter() {
+            override fun onAnimationEnd(animation: Animator?) {
+                super.onAnimationEnd(animation)
+                pieState = PieState.MINIMIZED
+            }
+        })
+
+        // Animates showing and hiding project titles
+        textAlpha.duration = 300
+        textAlpha.interpolator = DecelerateInterpolator()
+        textAlpha.addUpdateListener {
+            mainTextPaint.alpha = it.animatedValue as Int
+            linePaint.alpha = it.animatedValue as Int
+            indicatorCirclePaint.alpha = it.animatedValue as Int
+            invalidate()
+        }
+
+        animateExpansion.play(expandAnimator).with(textAlpha)
+        animateCollapse.play(collapseAnimator).with(textAlpha)
+    }
+
 }
